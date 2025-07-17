@@ -4,27 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
     <form class="form">
       <label>
         Delay (ms)
-        <input class="text" type="number" name="delay" required />
+        <input class="text-input" type="number" name="delay" required />
       </label>
 
       <fieldset class="fieldset">
         <legend>State</legend>
-        <label>
+        <label class="label">
           <input type="radio" name="state" value="fulfilled" required />
           Fulfilled
         </label>
-        <label>
+        <label class="label">
           <input type="radio" name="state" value="rejected" required />
           Rejected
         </label>
       </fieldset>
 
-      <button class="btn" type="submit">Create notification</button>
+      <button class="button" type="submit">Create notification</button>
     </form>
 
     <script type="module" crossorigin src="./js/2-snackbar.js"></script>
