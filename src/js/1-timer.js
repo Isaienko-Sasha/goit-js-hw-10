@@ -26,6 +26,7 @@ flatpickr('#datetime-picker', {
 });
 
 let userSelectedDate = null;
+startBtn.disabled = true;
 
 const startBtn = document.querySelector('button[data-start]');
 const inputEl = document.querySelector('#datetime-picker');
@@ -95,10 +96,9 @@ const time = new Timer({ onTick: updateClock });
 startBtn.addEventListener('click', time.start.bind(time));
 
 function updateClock({ days, hours, minutes, seconds }) {
-  daysEl.textContent = days;
+  daysEl.textContent = addLeadingZero(days);
   hoursEl.textContent = addLeadingZero(hours);
   minutesEl.textContent = addLeadingZero(minutes);
   secondsEl.textContent = addLeadingZero(seconds);
 }
 
-console.log(time);
