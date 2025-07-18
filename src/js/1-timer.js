@@ -4,6 +4,16 @@ import 'flatpickr/dist/flatpickr.min.css';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
+const startBtn = document.querySelector('button[data-start]');
+const inputEl = document.querySelector('#datetime-picker');
+const daysEl = document.querySelector('[data-days]');
+const hoursEl = document.querySelector('[data-hours]');
+const minutesEl = document.querySelector('[data-minutes]');
+const secondsEl = document.querySelector('[data-seconds]');
+
+startBtn.disabled = true;
+let userSelectedDate = null;
+
 flatpickr('#datetime-picker', {
   enableTime: true,
   time_24hr: true,
@@ -25,15 +35,6 @@ flatpickr('#datetime-picker', {
   },
 });
 
-let userSelectedDate = null;
-startBtn.disabled = true;
-
-const startBtn = document.querySelector('button[data-start]');
-const inputEl = document.querySelector('#datetime-picker');
-const daysEl = document.querySelector('[data-days]');
-const hoursEl = document.querySelector('[data-hours]');
-const minutesEl = document.querySelector('[data-minutes]');
-const secondsEl = document.querySelector('[data-seconds]');
 
 function convertMs(ms) {
   const second = 1000;
